@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>button_function_index</title>
+</head>
+<body>
+  <fieldset>
+    <textarea name="" id="param1" cols="30" rows="1"></textarea>
+    <button id="yourName">Adjust my number</button>
+
+  </fieldset>
+  <fieldset id="display">
+    <!-- <legend>Provide a number</legend>
+    <textarea name="" id="param1" cols="30" rows="1"></textarea>
+    <textarea name="" id="param2" cols="30" rows="1"></textarea> -->
+    <!-- <form id="myForm">
+      <input type="file" id="csvFile" accept=".csv" />
+      <br />
+      <input type="submit" value="Submit" />
+    </form>
+
+    <button id="btnDownload">Download Value</button>
+    <button id="btnExecute">Execute function</button> -->
+  </fieldset>
+  <script>
+    let name = '';
+    let introduction = name ? `My name is ${name}` : "Please give your name"
+    let display = document.getElementById('display');
+    let textarea = document.createElement('div');
+    let content = document.createTextNode(introduction);
+    textarea.appendChild(content);
+    display.appendChild(textarea);
+    
+   
+
+
+    document.querySelector('#yourName').addEventListener('click', ()=>{
+    name = document.querySelector('#param1').value;
+    //content = '';
+    
+    let newContent = document.createTextNode(`Welcome ${name}`);
+    content.deleteData(0, content.length);
+    textarea.appendChild(newContent);
+    
+
+
+
+      
+    })
+  </script>
+</body>
+</html>
